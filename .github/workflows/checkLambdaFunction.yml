@@ -22,5 +22,5 @@ jobs:
 
       - name: Run tests
         run: |
-          export PYTHONPATH=$PWD
+          echo $PYTHONPATH
           python -m pytest test/ # Run tests located in the /test directory
