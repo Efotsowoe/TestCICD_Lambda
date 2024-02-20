@@ -22,6 +22,7 @@ jobs:
 
       - name: Run tests
         run: |
+          cat src/lambda_function.py
           export const PYTHONPATH=$PWD
           pip install pytest
           python -m pytest tests/ # Run tests located in the /test directory
