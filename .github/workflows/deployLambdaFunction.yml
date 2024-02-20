@@ -2,7 +2,7 @@ name: Deploy Lambda Function
 
 on:
   push:
-    branches: [ main,feat/new-stuff ]
+    branches: [ main ]
 
 jobs:
   deploy:
