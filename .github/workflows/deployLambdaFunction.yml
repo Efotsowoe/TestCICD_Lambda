@@ -2,9 +2,7 @@ name: Deploy Lambda Function
 
 on:
   push:
-    paths:
-      - "src/**"
-    branches: [main]
+    branches: [ main,feat/new-stuff ]
 
 jobs:
   deploy:
@@ -15,7 +13,7 @@ jobs:
       - name: Install zip tool
         uses: montudor/action-zip@v1
       - name: Create Zip file for Lambda function
-        run: cd src && zip -r code.zip .
+        run: zip -r code.zip .
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:

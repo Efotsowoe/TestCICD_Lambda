@@ -8,3 +8,7 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps(get_lambda_message())
     }
+
+
+if __name__ == "__main__":
+    print(lambda_handler({}, {}))
