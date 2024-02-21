@@ -2,9 +2,7 @@ name: Deploy Lambda Function
 
 on:
   push:
-    paths:
-      - "src/**"
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -15,13 +13,13 @@ jobs:
       - name: Install zip tool
         uses: montudor/action-zip@v1
       - name: Create Zip file for Lambda function
-        run: cd src && zip -r code.zip .
+        run: zip -r code.zip .
       - name: AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
           args: "lambda update-function-code \
             --function-name arn:aws:lambda:us-west-2:034298214272:function:TestCICDFunction \
-            --zip-file fileb://src/code.zip"
+            --zip-file fileb://code.zip"
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

@@ -1,5 +1,5 @@
 import json
-from extra_utils import get_lambda_message
+from src.extra_utils import get_lambda_message
 
 
 def lambda_handler(event, context):
