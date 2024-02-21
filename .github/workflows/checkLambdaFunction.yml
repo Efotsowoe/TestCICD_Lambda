@@ -22,6 +22,5 @@ jobs:
 
       - name: Run tests
         run: |
-          export const PYTHONPATH=$PWD
           pip install pytest
           python -m pytest test/ # Run tests located in the /test directory
